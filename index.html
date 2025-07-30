@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithaku Edu – The Loony Hypochondriacs</title>
+  <title>Lithako Edu – The Loony Hypochondriacs</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -33,7 +33,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .hero button {
+    .hero button, .cta-button {
       background: #005fa3;
       color: white;
       border: none;
@@ -48,7 +48,7 @@
       margin: auto;
       padding: 2rem 1rem;
     }
-    .testimonial, .bio-box, .order-box {
+    .testimonial, .bio-box, .order-box, .faq, .thank-you, .countdown-timer {
       background: #e0f0ff;
       border-left: 4px solid #0077cc;
       padding: 1rem;
@@ -62,6 +62,22 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+    .countdown-box {
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 auto;
+    }
+    #countdown span {
+      display: inline-block;
+      min-width: 80px;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      background: #005fa3;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
     @media (max-width: 600px) {
       .hero img {
         max-width: 90%;
@@ -71,14 +87,14 @@
 </head>
 <body>
   <header>
-    <h1>Lithaku Edu</h1>
-    <p>Order <em>The Loony Hypochondriacs</em> Today</p>
+    <h1>Lithako Edu</h1>
+    <p>Pre-order <em>The Loony Hypochondriacs</em> Today</p>
   </header>
 
   <section class="hero">
-    <img src="The%20Loony%20Hypochondriacs.jpg" alt="The Loony Hypochondriacs Book Cover">
+    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
     <br>
-    <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
+    <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Pre-order Now</button>
   </section>
 
   <section class="section">
@@ -87,10 +103,11 @@
     <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
     <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
     <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+    <button class="cta-button" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Pre-order Now</button>
   </section>
 
   <section class="section" id="order">
-    <h2>How to Order</h2>
+    <h2>How to Pre-order</h2>
     <div class="order-box">
       <p><strong>Price:</strong> R369 (excluding delivery)</p>
       <p><strong>Payment Method:</strong> EFT Only</p>
@@ -123,14 +140,66 @@
   </section>
 
   <section class="section">
+    <h2>Shipping FAQs</h2>
+    <div class="faq">
+      <p><strong>Is delivery included in the price?</strong><br>
+      No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
+
+      <p><strong>Do you ship outside South Africa?</strong><br>
+      Yes, we offer worldwide shipping.</p>
+
+      <p><strong>When will I receive my book?</strong><br>
+      Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
+    </div>
+  </section>
+
+  <section class="section thank-you">
+    <h2>Thank You!</h2>
+    <p>Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!</p>
+  </section>
+
+  <section class="section countdown-timer">
+    <h2>Countdown to Release</h2>
+    <div class="countdown-box" id="countdown">
+      <span id="days">0d</span>
+      <span id="hours">0h</span>
+      <span id="minutes">0m</span>
+      <span id="seconds">0s</span>
+    </div>
+  </section>
+
+  <section class="section">
     <h2>Contact Us</h2>
-    <p><strong>Email:</strong> <a href="mailto:rllesupipersonal@gmail.com">rllesupipersonal@gmail.com</a><br>
+    <p><strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
        <strong>Phone:</strong> +27 67 265 6319<br>
        <strong>Location:</strong> City of Matlosana</p>
   </section>
 
   <footer>
-    &copy; 2025 Lithaku Edu. All rights reserved.
+    &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
+
+  <script>
+    // Countdown to release
+    const releaseDate = new Date("September 30, 2025 00:00:00").getTime();
+    const countdown = () => {
+      const now = new Date().getTime();
+      const distance = releaseDate - now;
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Now Shipping!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days + "d";
+      document.getElementById("hours").innerText = hours + "h";
+      document.getElementById("minutes").innerText = minutes + "m";
+      document.getElementById("seconds").innerText = seconds + "s";
+    };
+    setInterval(countdown, 1000);
+  </script>
 </body>
 </html>
