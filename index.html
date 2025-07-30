@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithako Edu – The Loony Hypochondriacs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,14 +14,15 @@
       line-height: 1.6;
     }
     header {
-      background: #0077cc;
+      background: #000000;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
+      font-family: 'Poppins', sans-serif;
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
     .hero {
       padding: 2rem 1rem;
@@ -48,39 +50,75 @@
       margin: auto;
       padding: 2rem 1rem;
     }
-    .testimonial, .bio-box, .order-box, .faq, .thank-you, .countdown-timer {
+    .testimonial, .order-box, .thank-you, .countdown-timer {
       background: #e0f0ff;
       border-left: 4px solid #0077cc;
       padding: 1rem;
       margin-bottom: 1.5rem;
       border-radius: 6px;
     }
+    .bio-box {
+      background: #ffffff;
+      color: #000000;
+      border-left: 4px solid #000000;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .faq {
+      background: #ffffff;
+      color: #000000;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .contact-box {
+      color: #000000;
+    }
     footer {
-      background: #003366;
+      background: #000000;
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
     }
     .countdown-box {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: bold;
       text-align: center;
       margin: 0 auto;
+      font-family: 'Poppins', sans-serif;
     }
     #countdown span {
       display: inline-block;
       min-width: 80px;
-      margin: 0 10px;
-      font-size: 1.2rem;
+      margin: 5px;
+      font-size: 1rem;
       background: #005fa3;
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 8px;
     }
+    summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    summary::marker {
+      content: "\25BC ";
+      font-size: 1rem;
+      color: #005fa3;
+    }
     @media (max-width: 600px) {
       .hero img {
         max-width: 90%;
+      }
+      #countdown span {
+        min-width: 70px;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -130,7 +168,7 @@
   </section>
 
   <section class="section">
-    <h2>About the Author</h2>
+    <h2 style="color: black;">About the Author</h2>
     <div class="bio-box">
       <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A Storyteller at heart.</p>
       <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination. As the creative lifeblood behind Ranneile Projects, he leads innovative initiatives that defy conventional categories.</p>
@@ -140,8 +178,8 @@
   </section>
 
   <section class="section">
-    <h2>Shipping FAQs</h2>
-    <div class="faq">
+    <details class="faq" open>
+      <summary style="color: black;">⬇️ Shipping FAQs</summary>
       <p><strong>Is delivery included in the price?</strong><br>
       No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
 
@@ -150,7 +188,7 @@
 
       <p><strong>When will I receive my book?</strong><br>
       Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
-    </div>
+    </details>
   </section>
 
   <section class="section thank-you">
@@ -161,14 +199,14 @@
   <section class="section countdown-timer">
     <h2>Countdown to Release</h2>
     <div class="countdown-box" id="countdown">
-      <span id="days">0d</span>
-      <span id="hours">0h</span>
-      <span id="minutes">0m</span>
-      <span id="seconds">0s</span>
+      <span id="days">0 Days</span>
+      <span id="hours">0 Hours</span>
+      <span id="minutes">0 Minutes</span>
+      <span id="seconds">0 Seconds</span>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section contact-box">
     <h2>Contact Us</h2>
     <p><strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
        <strong>Phone:</strong> +27 67 265 6319<br>
@@ -180,7 +218,6 @@
   </footer>
 
   <script>
-    // Countdown to release
     const releaseDate = new Date("September 30, 2025 00:00:00").getTime();
     const countdown = () => {
       const now = new Date().getTime();
@@ -194,10 +231,10 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("days").innerText = days + "d";
-      document.getElementById("hours").innerText = hours + "h";
-      document.getElementById("minutes").innerText = minutes + "m";
-      document.getElementById("seconds").innerText = seconds + "s";
+      document.getElementById("days").innerText = days + " Days";
+      document.getElementById("hours").innerText = hours + " Hours";
+      document.getElementById("minutes").innerText = minutes + " Minutes";
+      document.getElementById("seconds").innerText = seconds + " Seconds";
     };
     setInterval(countdown, 1000);
   </script>
