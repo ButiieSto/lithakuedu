@@ -1,134 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Loony Hypochondriacs</title>
+  <title>Lithaku Edu – The Loony Hypochondriacs</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f0f4f8;
-      color: #1f2937;
+      background: #f1f8ff;
+      color: #003366;
+      line-height: 1.6;
     }
-
     header {
-      background-color: #1e3a8a;
+      background: #0077cc;
       color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .hero {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #3b82f6;
-      color: white;
     }
-
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
     .hero img {
       max-width: 300px;
-      width: 100%;
+      width: 80%;
       height: auto;
-      margin: 1rem 0;
       border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
+    .hero button {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
     .section {
-      padding: 2rem 1rem;
       max-width: 800px;
       margin: auto;
+      padding: 2rem 1rem;
     }
-
-    .cta {
-      text-align: center;
-      margin-top: 2rem;
+    .testimonial, .bio-box, .order-box {
+      background: #e0f0ff;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
     }
-
-    .cta a {
-      background-color: #1d4ed8;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta a:hover {
-      background-color: #2563eb;
-    }
-
-    .footer {
-      background-color: #1e3a8a;
+    footer {
+      background: #003366;
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 3rem;
+      font-size: 0.9rem;
     }
-
     @media (max-width: 600px) {
-      .section, .hero {
-        padding: 1.5rem 1rem;
-      }
-
-      .cta a {
-        width: 100%;
-        padding: 1rem;
+      .hero img {
+        max-width: 90%;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Lithaku Edu</h1>
+    <p>Order <em>The Loony Hypochondriacs</em> Today</p>
   </header>
 
   <section class="hero">
-    <h2>The Loony Hypochondriacs!</h2>
-    <p>A sharp satire on our obsession with illness</p>
-    <p>⚠️ Pre-orders close very soon</p>
-    <img src="https://chat.openai.com/m/e7f2aa5d-5f76-4e60-a58c-df137aa6c735" alt="The Loony Hypochondriacs book cover">
-    <div class="cta">
-      <a href="#order"><strong>Order Now</strong></a>
-    </div>
+    <img src="The%20Loony%20Hypochondriacs.jpg" alt="The Loony Hypochondriacs Book Cover">
+    <br>
+    <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
   </section>
 
   <section class="section">
-    <h3>What Readers Are Saying</h3>
-    <p><strong>"This book is a must-read! I couldn’t put it down."</strong> – Thandi M.</p>
-    <p><strong>"Finally, someone said it! A witty take on a real issue."</strong> – Lebo R.</p>
-  </section>
-
-  <section class="section">
-    <h3>About the Book</h3>
-    <p><strong>The Loony Hypochondriacs!</strong> explores the chaotic world of exaggerated health fears and the systems that exploit them. It’s a sharp, satirical look at modern society's obsession with illness, driven by media, big pharma, and our own anxious minds.</p>
-  </section>
-
-  <section class="section">
-    <h3>About the Author</h3>
-    <p>Ranneile Lesupi is a passionate social commentator and writer whose work challenges the norms and sparks vital conversations. With years of experience observing health systems and societal behavior, Lesupi brings wit and insight to this unique topic.</p>
+    <h2>About the Book</h2>
+    <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
+    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
+    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
+    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
   </section>
 
   <section class="section" id="order">
-    <h3>How to Order</h3>
-    <p>To pre-order your copy of <strong>The Loony Hypochondriacs!</strong>, please send your proof of payment to:</p>
-    <ul>
-      <li><strong>Email:</strong> orders@lithakuedu.co.za</li>
-    </ul>
-    <p><strong>Price:</strong> <strong>R250</strong></p>
-    <p>Delivery details will be shared once payment is received.</p>
-    <div class="cta">
-      <a href="mailto:orders@lithakuedu.co.za"><strong>Email Proof of Payment</strong></a>
+    <h2>How to Order</h2>
+    <div class="order-box">
+      <p><strong>Price:</strong> R369 (excluding delivery)</p>
+      <p><strong>Payment Method:</strong> EFT Only</p>
+      <p><strong>Bank:</strong> Capitec Business<br>
+         <strong>Account Name:</strong> Lithako Edu and Sports<br>
+         <strong>Account Number:</strong> 1051 3359 06</p>
+      <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
+      <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Lithaku Edu. All rights reserved.</p>
+  <section class="section">
+    <h2>What Readers Are Saying</h2>
+    <div class="testimonial">
+      <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
+    </div>
+    <div class="testimonial">
+      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About the Author</h2>
+    <div class="bio-box">
+      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A Storyteller at heart.</p>
+      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination. As the creative lifeblood behind Ranneile Projects, he leads innovative initiatives that defy conventional categories.</p>
+      <p>Through Lithako Edu & Sports, he also physically coaches and mentors children aged 5–15, nurturing tomorrow’s champions both on the field and in their lives. In hospitality, his company Maqhubu Hospitality brings authentic warmth and elegance to every guest experience. He’s also the tech-savvy founder of Lelomotech, providing seamless Solar installations, proprietary Wi-Fi line and router connectivity. His fashion label, RuntaFit Apparel, blends style with purpose; all of this operates under the strategic guidance of his powerhouse holdings firm, House Of Nneile, where he excels as COO.</p>
+      <p>On the page and screen, Ranneile channels his storytelling gift of writing books, music, series, and screenplay that speak loudly to his community and beyond. His work is bold, real, lyrical and unapologetic. Every venture he leads is more than a project—it’s a statement.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> <a href="mailto:rllesupipersonal@gmail.com">rllesupipersonal@gmail.com</a><br>
+       <strong>Phone:</strong> +27 67 265 6319<br>
+       <strong>Location:</strong> City of Matlosana</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Lithaku Edu. All rights reserved.
   </footer>
 </body>
-
 </html>
