@@ -1,1 +1,1 @@
-# lithakuedu
+# lithakoedu
