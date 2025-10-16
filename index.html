@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lithako Edu & Sports – Empowering Young Minds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--gold);
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header img {
+      max-width: 160px;
+      height: auto;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out 0.3s forwards;
+    }
+
+    nav {
+      background: var(--gold);
+      text-align: center;
+      padding: 0.8rem 0;
+    }
+
+    nav a {
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(to bottom, #fffaf0, #fff);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .hero.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+    }
+
+    .buttons button {
+      background: var(--black);
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .buttons button:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .bio {
+      max-width: 800px;
+      margin: 3rem auto;
+      background: #f9f9f9;
+      border-left: 4px solid var(--gold);
+      padding: 2rem 1.5rem;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .bio.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bio h2 {
+      color: var(--black);
+    }
+
+    .bio p {
+      color: #333;
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--gold);
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header img {
+        max-width: 120px;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo">
+    <p>Empowering young minds through learning and sport.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="books.html">Books</a>
+    <a href="tutoring.html">Tutoring</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to Lithako Edu & Sports</h1>
+    <p>Where education meets inspiration. Lithako Edu & Sports is committed to shaping young minds through learning, mentorship, and athletic excellence.</p>
+    <div class="buttons">
+      <button onclick="window.location.href='books.html'">📚 Explore Books</button>
+      <button onclick="window.location.href='tutoring.html'">🎓 Join Tutoring</button>
+    </div>
+  </section>
+
+  <section class="bio">
+    <h2>About Ranneile Lesupi</h2>
+    <p><strong>Ranneile Lesupi</strong> — Sports Coach & Business Visionary. A storyteller at heart.  
+    Through <strong>Lithako Edu & Sports</strong>, he mentors and develops young learners and athletes aged 5–15, guiding them to become confident scholars and disciplined champions.</p>
+    <p>As an entrepreneur and author, his creativity extends through his various ventures — from tech and fashion to storytelling and mentorship — all driven by a single purpose: empowering the next generation to lead, learn, and thrive.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Lithako Edu & Sports. All rights reserved.<br>
+    <small>Contact: <a href="mailto:lithakoedu@gmail.com" style="color: var(--gold); text-decoration: underline;">lithakoedu@gmail.com</a></small>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const revealOnScroll = () => {
+      const reveals = document.querySelectorAll('.hero, .bio');
+      const windowHeight = window.innerHeight;
+      reveals.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>
