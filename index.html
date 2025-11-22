@@ -3,215 +3,468 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithako Edu – The Loony Hypochondriacs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <title>Lithako Edu & Sports</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       background: #f1f8ff;
-      color: #003366;
+      color: #000;
       line-height: 1.6;
     }
+
+    /* === Header === */
     header {
-      background: #000000;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      background-color: #000;
+      color: #add8e6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
     }
+
     header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
       margin: 0;
-      font-size: 2.2rem;
+      line-height: 1.1;
+      letter-spacing: 2px;
     }
-    .hero {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    .hero img {
-      max-width: 300px;
-      width: 80%;
+
+    header img {
+      width: 140px;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .hero button, .cta-button {
+
+    /* === Updated Navbar === */
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a i {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #aee0ff;
+      transform: scale(1.05);
+    }
+
+    nav a:hover i {
+      transform: translateY(-2px);
+      color: #ffffff;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: linear-gradient(135deg, #f7faff, #fff8e1);
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+
+    /* New uniform bold welcome lines (Option B sizes) */
+    .welcome-line {
+      font-weight: 900;
+      margin: 0.15rem 0;
+      color: black;
+      line-height: 1.05;
+    }
+
+    .welcome-small { font-size: 2.2rem; }   /* "Welcome to" */
+    .welcome-medium { font-size: 2.7rem; }  /* "Lithako" */
+    .welcome-large { font-size: 2.5rem; }   /* "Edu & Sports" */
+
+    .slogan {
+      font-size: 1.5rem;
+      margin: 0.5rem 0 1rem 0;
+      font-weight: bold;
+      color: #005fa3;
+    }
+
+    .welcome-section p {
+      max-width: 800px;
+      margin: 0.75rem auto;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #005fa3;
+    }
+
+    /* Buttons */
+    .buttons-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .buttons-section button {
       background: #005fa3;
       color: white;
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.8rem;
       font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
-      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: transform 0.2s, background 0.3s;
     }
-    .section {
+
+    .buttons-section button:hover {
+      transform: scale(1.05);
+      background: #00487d;
+    }
+
+    .about-section {
       max-width: 800px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-    .testimonial, .order-box, .thank-you, .countdown-timer {
-      background: #e0f0ff;
-      border-left: 4px solid #0077cc;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 6px;
-    }
-    .bio-box {
+      margin: 2rem auto;
+      padding: 1.5rem;
       background: #ffffff;
-      color: #000000;
-      border-left: 4px solid #000000;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 6px;
-    }
-    .faq {
-      background: #ffffff;
-      color: #000000;
       border-left: 4px solid #0077cc;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
       border-radius: 6px;
+      color: #000;
     }
-    .contact-box {
-      color: #000000;
+
+    .about-section h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
+
+    /* REGISTER SECTION (now collapsible) */
+    details.register-details {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      padding: 0; /* padding applied to content, not summary */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    details.register-details summary {
+      background: #005fa3;
+      color: #fff;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    /* rotate caret if closed/open (visual) */
+    details.register-details summary::marker { display: none; }
+    details.register-details summary i { transition: transform 0.25s ease; }
+    details.register-details:not([open]) summary i { transform: rotate(-90deg); }
+
+    details.register-details .reg-inner {
+      padding: 1.25rem;
+    }
+
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.2rem;
+    }
+
+    .reg-grid .full { grid-column: 1 / -1; }
+    label { font-weight: 600; display: block; margin-bottom: 0.25rem; font-size: 0.95rem; }
+    input, select, textarea { width: 100%; padding: 0.5rem; border: 1px solid #dcdcdc; border-radius: 6px; box-sizing: border-box; font-size: 0.95rem; }
+    textarea { min-height: 90px; resize: vertical; }
+
+    .reg-actions { display:flex; gap:1rem; align-items:center; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+    .reg-actions button { background:#005fa3; color:#fff; border:none; padding:0.7rem 1.2rem; border-radius:6px; cursor:pointer; font-weight:600; }
+    .reg-actions .secondary { background:transparent; color:#005fa3; border:2px dashed #cfe9ff; padding:0.6rem 1rem; }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 800px;
+      margin: 3rem auto;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .contact-intro { color: #333; font-style: italic; margin-bottom: 1rem; }
+
+    .contact-list { list-style: none; padding: 0; margin: 0; }
+    .contact-list li { margin: 0.5rem 0; font-size: 1rem; }
+    .contact-list i { margin-right: 8px; }
+    .contact-list a { color: #005fa3; text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    /* Sponsors Section */
+    .sponsors {
+      text-align: center;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 1.5rem;
+    }
+
+    .sponsors h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+
+    .sponsor-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .sponsor-logos img {
+      max-height: 100px;
+      width: auto;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
     footer {
-      background: #000000;
+      background: #000;
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
     }
-    .countdown-box {
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-      margin: 0 auto;
-      font-family: 'Poppins', sans-serif;
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .reg-grid { grid-template-columns: 1fr; }
+      .welcome-main { font-size: 2.4rem; }
+      .welcome-top { font-size: 2.1rem; }
     }
-    #countdown span {
-      display: inline-block;
-      min-width: 80px;
-      margin: 5px;
-      font-size: 1rem;
-      background: #005fa3;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-    }
-    summary {
-      font-weight: bold;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-    summary::marker {
-      content: "\25BC ";
-      font-size: 1rem;
-      color: #005fa3;
-    }
+
     @media (max-width: 600px) {
-      .hero img {
-        max-width: 90%;
-      }
-      #countdown span {
-        min-width: 70px;
-        font-size: 0.95rem;
-      }
+      header { flex-direction: column; text-align: center; }
+      header img { margin-top: 1rem; }
+      header h1 { font-size: 2.2rem; }
+      nav { gap: 1.2rem; }
+      nav a { font-size: 0.95rem; }
+      .welcome-small { font-size: 2rem; }
+      .welcome-medium { font-size: 2.5rem; }
+      .welcome-large { font-size: 2.2rem; }
     }
   </style>
 </head>
+
 <body>
-<header>
-  <h1>Lithako Edu</h1>
-  <p>Pre-order <em>The Loony Hypochondriacs</em> Today</p>
-  <button onclick="window.location.href='tutoring.html'" style="margin-top: 1rem; background:#005fa3; color:white; border:none; padding:0.75rem 1.5rem; border-radius:6px; cursor:pointer;">Tutoring Service</button>
-</header>
 
-  <section class="hero">
-    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
-    <br>
-    <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Pre-order Now</button>
+  <header>
+    <h1>LITHAKO<br>EDU & SPORTS</h1>
+    <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Registered Logo">
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
+  </nav>
+
+  <section class="welcome-section">
+    <h1 class="welcome-line welcome-small">Welcome to</h1>
+    <h1 class="welcome-line welcome-medium">Lithako</h1>
+    <h1 class="welcome-line welcome-large">Edu &amp; Sports</h1>
+
+    <h2 class="slogan">Empowering our young minds through education & sports.</h2>
+
+    <p>Our structured training programs are tailored for learners aged 5 to 15, combining academic support with high-performance sports development across Football, Basketball, Netball, Athletics, and more.</p>
+
+    <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential, academically, physically, and mentally.</p>
+
+    <p>We’re here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.</p>
+
+    <p>Through our balanced approach to education and sport, children learn discipline, respect, and resilience, which are values that will carry them far beyond the now.</p>
+
+    <p><strong style="color:#005fa3;">Developing Complete athletes, because every child, deserves a chance.</strong></p>
   </section>
 
-  <section class="section">
-    <h2>About the Book</h2>
-    <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
-    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
-    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
-    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
-    <button class="cta-button" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Pre-order Now</button>
+  <section class="buttons-section">
+    <button onclick="window.location.href='books.html'"><i class="fas fa-book"></i> Explore Our Books</button>
+    <button onclick="window.location.href='tutoring.html'"><i class="fas fa-graduation-cap"></i> Join Our Tutoring</button>
   </section>
 
-  <section class="section" id="order">
-    <h2>How to Pre-order</h2>
-    <div class="order-box">
-      <p><strong>Price:</strong> R369 (excluding delivery)</p>
-      <p><strong>Payment Method:</strong> EFT Only</p>
-      <p><strong>Bank:</strong> Capitec Business<br>
-         <strong>Account Name:</strong> Lithako Edu and Sports<br>
-         <strong>Account Number:</strong> 1051 3359 06</p>
-      <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
-      <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+  <section class="about-section">
+    <h2><i class="fas fa-user-tie"></i> About Ranneile Lesupi</h2>
+    <p>
+      <strong>Ranneile Lesupi</strong> - Sports Coach & Business Visionary. 
+      A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, 
+      he mentors and develops young learners and athletes aged 5-15, guiding 
+      them to become confident scholars and disciplined champions.
+    </p>
+  </section>
+
+  <!-- Collapsible registration (open by default) -->
+  <details open class="register-details" aria-labelledby="register-heading">
+    <summary><i class="fas fa-clipboard-list"></i> How to Book your spot in our Sports Program/s</summary>
+    <div class="reg-inner">
+      <h2 id="register-heading" style="margin-top:0; text-align:center;">How to Book your spot in our Sports Program/s</h2>
+      <p class="register-note" style="text-align:center;">Fill the registration form below and press <strong>Send Registration</strong>. This will open your email app with the registration details pre-filled for sending to our office.</p>
+
+      <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)" novalidate>
+        <div class="reg-grid">
+          <div>
+            <label for="childName">Child's Name</label>
+            <input id="childName" name="childName" type="text" required>
+          </div>
+
+          <div>
+            <label for="childAge">Child's Age</label>
+            <input id="childAge" name="childAge" type="text" required>
+          </div>
+
+          <div class="full">
+            <label for="guardian">Guardian / Parent(s) Name(s)</label>
+            <input id="guardian" name="guardian" type="text" required>
+          </div>
+
+          <div class="full">
+            <label for="address">Home Address</label>
+            <input id="address" name="address" type="text">
+          </div>
+
+          <div>
+            <label for="province">Province</label>
+            <input id="province" name="province" type="text">
+          </div>
+
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="text" placeholder="+27 67 265 6319" required>
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div>
+            <label>Child's Allergies?</label>
+            <div class="checkbox-row">
+              <label><input type="radio" name="allergies" value="Yes"> Yes</label>
+              <label><input type="radio" name="allergies" value="No" checked> No</label>
+            </div>
+          </div>
+
+          <div class="full">
+            <label for="allergyDetails">If yes, please list allergies</label>
+            <input id="allergyDetails" name="allergyDetails" type="text" placeholder="Allergies details (if any)">
+          </div>
+
+          <div class="full">
+            <label for="school">What school does your child attend?</label>
+            <input id="school" name="school" type="text">
+          </div>
+
+          <div class="full">
+            <label for="interests">What are your child's interests?</label>
+            <input id="interests" name="interests" type="text">
+          </div>
+
+          <div class="full">
+            <label for="why">Why are you interested in enrolling in Lithako Edu & Sports Programs?</label>
+            <textarea id="why" name="why"></textarea>
+          </div>
+
+          <div>
+            <label for="heard">How did you hear about us?</label>
+            <input id="heard" name="heard" type="text">
+          </div>
+
+          <div>
+            <label for="signature">Parent / Guardian Name (signature)</label>
+            <input id="signature" name="signature" type="text" placeholder="Type full name">
+          </div>
+        </div>
+
+        <div class="reg-actions">
+          <button type="submit">📩 Send Registration</button>
+          <button type="button" class="secondary" onclick="resetRegistration()" aria-label="Reset form">Reset Form</button>
+          <small style="display:block; width:100%; text-align:center; margin-top:0.5rem;">Clicking "Send Registration" will open your default email app with the completed registration ready to send to <strong>lithakoedu@gmail.com</strong>.</small>
+        </div>
+      </form>
     </div>
+  </details>
+
+  <section class="contact-section">
+    <h2><i class="fas fa-headset"></i> Contact Us</h2>
+    <p class="contact-intro">We’re here to assist parents, learners, and partners — reach out anytime.</p>
+    <ul class="contact-list">
+      <li><i class="fas fa-envelope icon-red"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp icon-green"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt icon-blue"></i> City of Matlosana, South Africa</li>
+    </ul>
   </section>
 
-  <section class="section">
-    <h2>What Readers Are Saying</h2>
-    <div class="testimonial">
-      <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
+  <section class="sponsors">
+    <h2>Our Proud Sponsors</h2>
+    <div class="sponsor-logos">
+      <img src="sponsor1.jpg" alt="Sponsor 1">
+      <img src="sponsor2.jpg" alt="Sponsor 2">
+      <img src="sponsor3.jpg" alt="Sponsor 3">
+      <img src="sponsor4.jpg" alt="Sponsor 4">
+      <img src="sponsor5.jpg" alt="Sponsor 5">
+      <img src="sponsor6.jpg" alt="Sponsor 6">
+      <img src="sponsor7.jpg" alt="Sponsor 7">
     </div>
-    <div class="testimonial">
-      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 style="color: black;">About the Author</h2>
-    <div class="bio-box">
-      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A Storyteller at heart.</p>
-      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination. As the creative lifeblood behind Ranneile Projects, he leads innovative initiatives that defy conventional categories.</p>
-      <p>Through Lithako Edu & Sports, he also physically coaches and mentors children aged 5–15, nurturing tomorrow’s champions both on the field and in their lives. In hospitality, his company Maqhubu Hospitality brings authentic warmth and elegance to every guest experience. He’s also the tech-savvy founder of Lelomotech, providing seamless Solar installations, proprietary Wi-Fi line and router connectivity. His fashion label, RuntaFit Apparel, blends style with purpose; all of this operates under the strategic guidance of his powerhouse holdings firm, House Of Nneile, where he excels as COO.</p>
-      <p>On the page and screen, Ranneile channels his storytelling gift of writing books, music, series, and screenplay that speak loudly to his community and beyond. His work is bold, real, lyrical and unapologetic. Every venture he leads is more than a project—it’s a statement.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <details class="faq" open>
-      <summary style="color: black;">⬇️ Shipping FAQs</summary>
-      <p><strong>Is delivery included in the price?</strong><br>
-      No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
-
-      <p><strong>Do you ship outside South Africa?</strong><br>
-      Yes, we offer worldwide shipping.</p>
-
-      <p><strong>When will I receive my book?</strong><br>
-      Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
-    </details>
-  </section>
-
-  <section class="section thank-you">
-    <h2>Thank You!</h2>
-    <p>Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!</p>
-  </section>
-
-  <section class="section countdown-timer">
-    <h2>Countdown to Release</h2>
-    <div class="countdown-box" id="countdown">
-      <span id="days">0 Days</span>
-      <span id="hours">0 Hours</span>
-      <span id="minutes">0 Minutes</span>
-      <span id="seconds">0 Seconds</span>
-    </div>
-  </section>
-
-  <section class="section contact-box">
-    <h2>Contact Us</h2>
-    <p><strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
-       <strong>Phone:</strong> +27 67 265 6319<br>
-       <strong>Location:</strong> City of Matlosana</p>
   </section>
 
   <footer>
@@ -219,25 +472,49 @@
   </footer>
 
   <script>
-    const releaseDate = new Date("September 30, 2025 00:00:00").getTime();
-    const countdown = () => {
-      const now = new Date().getTime();
-      const distance = releaseDate - now;
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "Now Shipping!";
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Build mailto body and open user's email client with pre-filled message.
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('registrationForm');
+      const data = new FormData(form);
 
-      document.getElementById("days").innerText = days + " Days";
-      document.getElementById("hours").innerText = hours + " Hours";
-      document.getElementById("minutes").innerText = minutes + " Minutes";
-      document.getElementById("seconds").innerText = seconds + " Seconds";
-    };
-    setInterval(countdown, 1000);
+      const fields = {
+        "Child's Name": data.get('childName') || '',
+        "Child's Age": data.get('childAge') || '',
+        "Guardian / Parent(s) Name(s)": data.get('guardian') || '',
+        "Home Address": data.get('address') || '',
+        "Province": data.get('province') || '',
+        "Phone": data.get('phone') || '',
+        "Email": data.get('email') || '',
+        "Allergies (Yes/No)": data.get('allergies') || '',
+        "Allergy Details": data.get('allergyDetails') || '',
+        "School": data.get('school') || '',
+        "Child's Interests": data.get('interests') || '',
+        "Why enrolling": data.get('why') || '',
+        "How did you hear about us": data.get('heard') || '',
+        "Parent/Guardian (signature/name)": data.get('signature') || ''
+      };
+
+      let body = '';
+      for (const [k, v] of Object.entries(fields)) {
+        body += `${k}: ${v}\n`;
+      }
+
+      const subject = `Program Registration: ${fields["Child's Name"] || 'New Registration'}`;
+      const mailto = `mailto:lithakoedu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+    }
+
+    function resetRegistration() {
+      const form = document.getElementById('registrationForm');
+      form.reset();
+      const radios = document.getElementsByName('allergies');
+      if (radios && radios.length) {
+        for (const r of radios) { if (r.value === 'No') r.checked = true; }
+      }
+    }
   </script>
+
 </body>
 </html>
