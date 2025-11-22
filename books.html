@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lithako Edu – The Loony Hypochondriacs</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f1f8ff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #000;
+      color: #add8e6;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #add8e6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #aee0ff;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .cta-button {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1rem auto;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #00487d;
+      transform: scale(1.05);
+    }
+
+    .pulse {
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .highlight {
+      color: #005fa3;
+      font-weight: 600;
+    }
+
+    /* Box Sections */
+    .info-box {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+    }
+
+    .info-box h2 {
+      text-align: center;
+      color: #005fa3;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Accordion Sections */
+    .accordion {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      background: #fff;
+      border-radius: 8px;
+      border-left: 4px solid #0077cc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-header {
+      background: #005fa3;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    .accordion-header i.fa-chevron-down {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.open .accordion-header i.fa-chevron-down {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      padding: 1rem 1.5rem;
+      opacity: 1;
+      max-height: none;
+    }
+
+    .accordion.closed .accordion-content {
+      display: none;
+      opacity: 0;
+    }
+
+    /* Thank You Box */
+    .thank-you {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 800px;
+      margin: 3rem auto;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .contact-section h2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 2rem;
+      color: #005fa3;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    /* Floating Buttons */
+    .floating-btn {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 26px;
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-btn i {
+      margin: 0;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.07);
+    }
+
+    .whatsapp-float {
+      background-color: #25D366;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .email-float {
+      background-color: #0077cc;
+      bottom: 90px;
+      right: 20px;
+    }
+
+    /* Back to Home */
+    .back-home {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .back-home .back-cta {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-home .back-cta:hover {
+      background: #00487d;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero img { max-width: 220px; }
+      .info-box, .accordion, .thank-you, .contact-section { margin: 1rem; padding: 1rem; }
+      .email-float { right: 14px; bottom: 84px; }
+      .whatsapp-float { right: 14px; bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lithako Edu</h1>
+    <p>Order <em>The Loony Hypochondriacs</em> Today</p>
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
+  </nav>
+
+  <section class="hero">
+    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
+    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" aria-label="Order Now">
+      <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
+    </button>
+  </section>
+
+  <section class="info-box">
+    <h2><i class="fas fa-book-open"></i> About the Book</h2>
+
+    <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
+
+    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
+
+    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
+
+    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+  </section>
+
+  <div style="text-align:center;">
+    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" aria-label="Order Now (second)">
+      <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
+    </button>
+  </div>
+
+  <section id="order" class="info-box">
+    <h2><i class="fas fa-credit-card"></i> How to Order</h2>
+    <p><strong>Price:</strong> R369 (excluding delivery)</p>
+    <p><strong>Payment Method:</strong> EFT Only</p>
+    <p><strong>Bank:</strong> Capitec Business<br>
+       <strong>Account Name:</strong> Lithako Edu and Sports<br>
+       <strong>Account Number:</strong> 1051 3359 06</p>
+    <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
+    <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+    <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
+  </section>
+
+  <!-- What Readers Are Saying -->
+  <div class="accordion open" aria-expanded="true">
+    <div class="accordion-header">
+      <span><i class="fas fa-comment-dots" aria-hidden="true"></i> What Readers Are Saying</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-content">
+      <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
+      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
+      <p><em>"I finally got to read it. It was refreshing, well paced and certainly a very welcome distraction from academic literature."</em></p>
+    </div>
+  </div>
+
+  <!-- Updated About the Author -->
+  <div class="accordion open" aria-expanded="true">
+    <div class="accordion-header">
+      <span><i class="fas fa-user-tie" aria-hidden="true"></i> About the Author</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-content">
+      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart.</p>
+      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
+      <p>Both on page and on screen, Ranneile brings stories which are bold, real and unapologetic to life, speaking to both his community and beyond.</p>
+    </div>
+  </div>
+
+  <div class="accordion open" aria-expanded="true">
+    <div class="accordion-header">
+      <span><i class="fas fa-truck" aria-hidden="true"></i> Shipping FAQs</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-content">
+      <p><strong>Is delivery included?</strong> No. Options: Paxi, Pudo, or PostNet.</p>
+      <p><strong>International shipping?</strong> Yes.</p>
+    </div>
+  </div>
+
+  <div class="thank-you">
+    Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!
+  </div>
+
+  <section class="contact-section">
+    <h2><i class="fas fa-headset"></i> Contact Us</h2>
+    <ul class="contact-list">
+      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank" rel="noopener">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank" rel="noopener">City of Matlosana, South Africa</a></li>
+    </ul>
+  </section>
+
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" rel="noopener" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send us an email">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+  </a>
+
+  <div class="back-home">
+    <button class="back-cta" type="button" onclick="window.location.href='index.html'" aria-label="Back to Home">
+      <i class="fas fa-home" aria-hidden="true"></i> Back to Home
+    </button>
+  </div>
+
+  <footer>
+    &copy; 2025 Lithako Edu. All rights reserved.
+  </footer>
+
+  <script>
+    // Accordion behavior — keep accordions open by default (they have class "open")
+    // Clicking header toggles closed/open.
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+      const header = acc.querySelector('.accordion-header');
+      header.addEventListener('click', () => {
+        acc.classList.toggle('closed');
+        // ensure aria-expanded reflects state
+        const expanded = !acc.classList.contains('closed');
+        acc.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
