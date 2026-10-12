@@ -3,315 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithako Edu & Sports</title>
+  <title>Lithako Edu & Sports | Books, Tutoring & Sports Programs – City of Matlosana</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <meta name="description" content="Lithako Edu & Sports empowers young minds aged 5–15 through education, tutoring, and high-performance sports programs in City of Matlosana, South Africa.">
+  <meta property="og:title" content="Lithako Edu & Sports">
+  <meta property="og:description" content="Empowering young minds through education & sports. Tutoring, books, and sports programs for ages 5–15.">
+  <meta property="og:image" content="lithako-sports-logo-reg.jpg">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f1f8ff;
-      color: #000;
-      line-height: 1.6;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; background: #f1f8ff; color: #000; line-height: 1.6; }
 
-    /* === Header === */
-    header {
-      width: 100%;
-      background-color: #000;
-      color: #add8e6;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-sizing: border-box;
-    }
+    header { width: 100%; background: #000; color: #add8e6; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; margin: 0; line-height: 1.1; letter-spacing: 2px; }
+    header img { width: 140px; height: auto; border-radius: 8px; }
 
-    header h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
-      margin: 0;
-      line-height: 1.1;
-      letter-spacing: 2px;
-    }
+    nav { background: #005fa3; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem 2.5rem; padding: 0.85rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 4px; transition: color 0.3s, background 0.3s, transform 0.2s; }
+    nav a:hover { color: #aee0ff; background: rgba(255,255,255,0.1); transform: scale(1.04); }
 
-    header img {
-      width: 140px;
-      height: auto;
-    }
+    .welcome-section { text-align: center; padding: 2.5rem 1.5rem; background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; box-shadow: 0 4px 14px rgba(0,0,0,0.07); margin: 2rem auto; max-width: 900px; animation: fadeUp 0.6s ease both; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    .welcome-line { font-weight: 900; margin: 0.15rem 0; color: #000; line-height: 1.05; }
+    .welcome-small  { font-size: 2.2rem; }
+    .welcome-medium { font-size: 2.7rem; }
+    .welcome-large  { font-size: 2.5rem; }
+    .slogan { font-size: 1.4rem; margin: 0.75rem 0 1rem; font-weight: 700; color: #005fa3; }
+    .welcome-section p { max-width: 800px; margin: 0.75rem auto; font-size: 1rem; }
 
-    /* === Updated Navbar === */
-    nav {
-      background: #005fa3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2.5rem;
-      padding: 1rem 0;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+    .buttons-section { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 2rem 1rem; }
+    .buttons-section button { background: #005fa3; color: white; border: none; padding: 0.75rem 1.8rem; font-size: 1rem; font-family: 'Poppins', sans-serif; font-weight: 600; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.6rem; transition: background 0.3s, transform 0.2s; }
+    .buttons-section button:hover  { background: #00487d; transform: scale(1.05); }
+    .buttons-section button:active { transform: scale(0.98); }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s ease;
-    }
+    .card { max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .card h2 { margin-top: 0; font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: #005fa3; }
 
-    nav a i {
-      font-size: 1.2rem;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+    /* Gallery strip */
+    .gallery-strip { max-width: 900px; margin: 2rem auto; }
+    .gallery-strip h2 { font-size: 1.8rem; font-weight: 700; color: #005fa3; text-align: center; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .gallery-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.12); transition: transform 0.25s, filter 0.25s; }
+    .gallery-grid img:hover { transform: scale(1.03); filter: brightness(1.06); }
 
-    nav a:hover {
-      color: #aee0ff;
-      transform: scale(1.05);
-    }
+    /* Testimonials */
+    .testimonials { max-width: 900px; margin: 2rem auto; }
+    .testimonials h2 { font-size: 1.8rem; font-weight: 700; color: #005fa3; text-align: center; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .testi-card { background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; padding: 1.2rem 1.4rem; box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
+    .testi-card p { font-style: italic; margin: 0 0 0.75rem; font-size: 0.95rem; color: #222; }
+    .testi-card .author { font-weight: 700; color: #005fa3; font-size: 0.9rem; }
 
-    nav a:hover i {
-      transform: translateY(-2px);
-      color: #ffffff;
-    }
-
-    /* Welcome Section */
-    .welcome-section {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      background: linear-gradient(135deg, #f7faff, #fff8e1);
-      border-left: 4px solid #0077cc;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin: 2rem auto;
-      max-width: 900px;
-    }
-
-    /* New uniform bold welcome lines (Option B sizes) */
-    .welcome-line {
-      font-weight: 900;
-      margin: 0.15rem 0;
-      color: black;
-      line-height: 1.05;
-    }
-
-    .welcome-small { font-size: 2.2rem; }   /* "Welcome to" */
-    .welcome-medium { font-size: 2.7rem; }  /* "Lithako" */
-    .welcome-large { font-size: 2.5rem; }   /* "Edu & Sports" */
-
-    .slogan {
-      font-size: 1.5rem;
-      margin: 0.5rem 0 1rem 0;
-      font-weight: bold;
-      color: #005fa3;
-    }
-
-    .welcome-section p {
-      max-width: 800px;
-      margin: 0.75rem auto;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #005fa3;
-    }
-
-    /* Buttons */
-    .buttons-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-
-    .buttons-section button {
-      background: #005fa3;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.8rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: transform 0.2s, background 0.3s;
-    }
-
-    .buttons-section button:hover {
-      transform: scale(1.05);
-      background: #00487d;
-    }
-
-    .about-section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: #ffffff;
-      border-left: 4px solid #0077cc;
-      border-radius: 6px;
-      color: #000;
-    }
-
-    .about-section h2 {
-      margin-top: 0;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    /* REGISTER SECTION (now collapsible) */
-    details.register-details {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: #ffffff;
-      border-left: 4px solid #0077cc;
-      border-radius: 8px;
-      padding: 0; /* padding applied to content, not summary */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      overflow: hidden;
-    }
-
-    details.register-details summary {
-      background: #005fa3;
-      color: #fff;
-      padding: 1rem 1.25rem;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 1.05rem;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-    }
-
-    /* rotate caret if closed/open (visual) */
-    details.register-details summary::marker { display: none; }
-    details.register-details summary i { transition: transform 0.25s ease; }
-    details.register-details:not([open]) summary i { transform: rotate(-90deg); }
-
-    details.register-details .reg-inner {
-      padding: 1.25rem;
-    }
-
-    .reg-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem 1.2rem;
-    }
-
+    /* Registration */
+    details.register-details { max-width: 900px; margin: 2rem auto; background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.06); overflow: hidden; }
+    details.register-details summary { background: #005fa3; color: #fff; padding: 1rem 1.25rem; cursor: pointer; font-weight: 700; font-size: 1.05rem; font-family: 'Poppins', sans-serif; list-style: none; display: flex; align-items: center; justify-content: center; gap: 0.6rem; transition: background 0.2s; user-select: none; }
+    details.register-details summary:hover { background: #00487d; }
+    details.register-details summary::-webkit-details-marker { display: none; }
+    details.register-details summary .chevron { transition: transform 0.3s; margin-left: auto; }
+    details.register-details:not([open]) summary .chevron { transform: rotate(-90deg); }
+    details.register-details .reg-inner { padding: 1.25rem; }
+    .reg-note { text-align: center; color: #444; font-size: 0.95rem; margin-bottom: 1rem; }
+    .reg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem 1.2rem; }
     .reg-grid .full { grid-column: 1 / -1; }
     label { font-weight: 600; display: block; margin-bottom: 0.25rem; font-size: 0.95rem; }
-    input, select, textarea { width: 100%; padding: 0.5rem; border: 1px solid #dcdcdc; border-radius: 6px; box-sizing: border-box; font-size: 0.95rem; }
+    input, select, textarea { width: 100%; padding: 0.5rem 0.65rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; font-family: 'Poppins', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #005fa3; box-shadow: 0 0 0 3px rgba(0,95,163,0.15); }
+    input.error { border-color: #d93025; }
+    .error-msg { color: #d93025; font-size: 0.82rem; margin-top: 0.2rem; display: none; }
+    .error-msg.visible { display: block; }
     textarea { min-height: 90px; resize: vertical; }
+    .checkbox-row { display: flex; gap: 1.2rem; margin-top: 0.25rem; }
+    .checkbox-row label { font-weight: 400; display: flex; align-items: center; gap: 0.4rem; }
+    .reg-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+    .reg-actions button { background: #005fa3; color: #fff; border: none; padding: 0.7rem 1.4rem; border-radius: 6px; cursor: pointer; font-weight: 600; font-family: 'Poppins', sans-serif; font-size: 0.95rem; transition: background 0.3s, transform 0.2s; }
+    .reg-actions button:hover  { background: #00487d; transform: scale(1.04); }
+    .reg-actions button:active { transform: scale(0.97); }
+    .reg-actions .secondary { background: transparent; color: #005fa3; border: 2px dashed #9fd0f0; }
+    .reg-actions .secondary:hover { background: #eaf5ff; }
+    .reg-hint { display: block; width: 100%; text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #555; }
 
-    .reg-actions { display:flex; gap:1rem; align-items:center; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
-    .reg-actions button { background:#005fa3; color:#fff; border:none; padding:0.7rem 1.2rem; border-radius:6px; cursor:pointer; font-weight:600; }
-    .reg-actions .secondary { background:transparent; color:#005fa3; border:2px dashed #cfe9ff; padding:0.6rem 1rem; }
+    /* Privacy notice */
+    .privacy-note { max-width: 900px; margin: 0 auto 1rem; padding: 0.85rem 1.2rem; background: #eaf5ff; border-radius: 6px; font-size: 0.88rem; color: #444; text-align: center; border: 1px solid #cce4f7; }
+    .privacy-note a { color: #005fa3; }
 
-    /* Contact Section */
-    .contact-section {
-      max-width: 800px;
-      margin: 3rem auto;
-      background: #ffffff;
-      border-left: 4px solid #0077cc;
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      color: #000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .contact-section h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .contact-intro { color: #333; font-style: italic; margin-bottom: 1rem; }
-
+    /* Contact */
+    .contact-section { max-width: 800px; margin: 3rem auto; background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; padding: 1.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .contact-section h2 { font-size: 1.8rem; margin: 0 0 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: #005fa3; }
+    .contact-intro { color: #444; font-style: italic; margin-bottom: 1rem; }
     .contact-list { list-style: none; padding: 0; margin: 0; }
-    .contact-list li { margin: 0.5rem 0; font-size: 1rem; }
-    .contact-list i { margin-right: 8px; }
+    .contact-list li { margin: 0.6rem 0; font-size: 1rem; }
     .contact-list a { color: #005fa3; text-decoration: none; }
     .contact-list a:hover { text-decoration: underline; }
 
-    /* Sponsors Section */
-    .sponsors {
-      text-align: center;
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 1.5rem;
-    }
+    /* Sponsors */
+    .sponsors { text-align: center; max-width: 1000px; margin: 3rem auto; padding: 1.5rem; }
+    .sponsors h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #005fa3; }
+    .sponsor-logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; justify-items: center; align-items: center; }
+    .sponsor-slot { width: 150px; height: 80px; background: #e8f2fb; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #aac8e8; font-size: 0.8rem; font-weight: 600; transition: transform 0.2s; }
+    .sponsor-slot img { max-height: 70px; max-width: 140px; object-fit: contain; border-radius: 6px; }
+    .sponsor-slot:hover { transform: scale(1.05); }
 
-    .sponsors h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    /* Floating */
+    .floating-btn { position: fixed; width: 55px; height: 55px; border-radius: 50%; font-size: 24px; color: white; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: transform 0.25s, filter 0.25s; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+    .floating-btn:hover { transform: scale(1.1); filter: brightness(1.1); }
+    .whatsapp-float { background: #25D366; bottom: 20px; right: 20px; }
+    .email-float    { background: #0077cc; bottom: 90px; right: 20px; }
 
-    .sponsor-logos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-      align-items: center;
-    }
+    footer { background: #000; color: #ccc; text-align: center; padding: 1rem; font-size: 0.9rem; }
+    footer a { color: #add8e6; text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { text-decoration: underline; }
 
-    .sponsor-logos img {
-      max-height: 100px;
-      width: auto;
-      border-radius: 8px;
-      object-fit: contain;
-    }
-
-    footer {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .reg-grid { grid-template-columns: 1fr; }
-      .welcome-main { font-size: 2.4rem; }
-      .welcome-top { font-size: 2.1rem; }
-    }
-
+    @media (max-width: 900px) { .reg-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) {
-      header { flex-direction: column; text-align: center; }
+      header { flex-direction: column; text-align: center; padding: 1.25rem 1rem; }
       header img { margin-top: 1rem; }
       header h1 { font-size: 2.2rem; }
-      nav { gap: 1.2rem; }
-      nav a { font-size: 0.95rem; }
-      .welcome-small { font-size: 2rem; }
-      .welcome-medium { font-size: 2.5rem; }
-      .welcome-large { font-size: 2.2rem; }
+      .welcome-small { font-size: 1.8rem; } .welcome-medium { font-size: 2.3rem; } .welcome-large { font-size: 2rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .card, .gallery-strip, .testimonials, .contact-section, details.register-details { margin: 1.5rem 0.75rem; }
+      .email-float { right: 14px; bottom: 84px; } .whatsapp-float { right: 14px; bottom: 20px; }
     }
   </style>
 </head>
-
 <body>
 
   <header>
-    <h1>LITHAKO<br>EDU & SPORTS</h1>
+    <h1>LITHAKO<br>EDU &amp; SPORTS</h1>
     <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Registered Logo">
   </header>
 
@@ -319,85 +139,109 @@
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="books.html"><i class="fas fa-book"></i> Books</a>
     <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
+    <a href="sports.html"><i class="fas fa-running"></i> Sports</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
   </nav>
 
   <section class="welcome-section">
     <h1 class="welcome-line welcome-small">Welcome to</h1>
     <h1 class="welcome-line welcome-medium">Lithako</h1>
     <h1 class="welcome-line welcome-large">Edu &amp; Sports</h1>
-
-    <h2 class="slogan">Empowering our young minds through education & sports.</h2>
-
+    <h2 class="slogan">Empowering our young minds through education &amp; sports.</h2>
     <p>Our structured training programs are tailored for learners aged 5 to 15, combining academic support with high-performance sports development across Football, Basketball, Netball, Athletics, and more.</p>
-
-    <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential, academically, physically, and mentally.</p>
-
-    <p>We’re here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.</p>
-
-    <p>Through our balanced approach to education and sport, children learn discipline, respect, and resilience, which are values that will carry them far beyond the now.</p>
-
-    <p><strong style="color:#005fa3;">Developing Complete athletes, because every child, deserves a chance.</strong></p>
+    <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential — academically, physically, and mentally.</p>
+    <p>We're here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.</p>
+    <p>Through our balanced approach to education and sport, children learn discipline, respect, and resilience — values that will carry them far beyond the now.</p>
+    <p><strong style="color:#005fa3;">Developing complete athletes — because every child deserves a chance.</strong></p>
   </section>
 
   <section class="buttons-section">
     <button onclick="window.location.href='books.html'"><i class="fas fa-book"></i> Explore Our Books</button>
     <button onclick="window.location.href='tutoring.html'"><i class="fas fa-graduation-cap"></i> Join Our Tutoring</button>
+    <button onclick="window.location.href='sports.html'"><i class="fas fa-running"></i> View Sports Programs</button>
   </section>
 
-  <section class="about-section">
+  <!-- Gallery strip -->
+  <section class="gallery-strip">
+    <h2><i class="fas fa-images"></i> Life at Lithako</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80" alt="Basketball training">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Children studying">
+      <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" alt="Football practice">
+      <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80" alt="Athletics">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&q=80" alt="Classroom learning">
+      <img src="https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?w=400&q=80" alt="Team sport">
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2><i class="fas fa-quote-left"></i> What Parents Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"My son's confidence has grown tremendously since joining the football program. The coaches are incredibly dedicated."</p>
+        <span class="author">— Mpho M., Parent</span>
+      </div>
+      <div class="testi-card">
+        <p>"The tutoring sessions have made a real difference to my daughter's grades. She actually looks forward to studying now!"</p>
+        <span class="author">— Tebogo K., Parent</span>
+      </div>
+      <div class="testi-card">
+        <p>"A wonderful program that balances sport and academics perfectly. I recommend it to every parent in Matlosana."</p>
+        <span class="author">— Lerato S., Parent</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
     <h2><i class="fas fa-user-tie"></i> About Ranneile Lesupi</h2>
-    <p>
-      <strong>Ranneile Lesupi</strong> - Sports Coach & Business Visionary. 
-      A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, 
-      he mentors and develops young learners and athletes aged 5-15, guiding 
-      them to become confident scholars and disciplined champions.
-    </p>
+    <p><strong>Ranneile Lesupi</strong> — Sports Coach &amp; Business Visionary. A storyteller at heart. Through <strong>Lithako Edu &amp; Sports</strong>, he mentors and develops young learners and athletes aged 5–15, guiding them to become confident scholars and disciplined champions.</p>
   </section>
 
-  <!-- Collapsible registration (open by default) -->
-  <details open class="register-details" aria-labelledby="register-heading">
-    <summary><i class="fas fa-clipboard-list"></i> How to Book your spot in our Sports Program/s</summary>
+  <!-- Registration -->
+  <details open class="register-details">
+    <summary>
+      <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+      How to Book Your Spot in Our Sports Program/s
+      <i class="fas fa-chevron-down chevron" aria-hidden="true"></i>
+    </summary>
     <div class="reg-inner">
-      <h2 id="register-heading" style="margin-top:0; text-align:center;">How to Book your spot in our Sports Program/s</h2>
-      <p class="register-note" style="text-align:center;">Fill the registration form below and press <strong>Send Registration</strong>. This will open your email app with the registration details pre-filled for sending to our office.</p>
-
+      <p class="reg-note">Fill in the form below and press <strong>Send Registration</strong>. This will open your email app with the details pre-filled and ready to send to our office.</p>
       <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)" novalidate>
         <div class="reg-grid">
           <div>
-            <label for="childName">Child's Name</label>
+            <label for="childName">Child's Name *</label>
             <input id="childName" name="childName" type="text" required>
+            <span class="error-msg" id="err-childName">Please enter the child's name.</span>
           </div>
-
           <div>
-            <label for="childAge">Child's Age</label>
+            <label for="childAge">Child's Age *</label>
             <input id="childAge" name="childAge" type="text" required>
+            <span class="error-msg" id="err-childAge">Please enter the child's age.</span>
           </div>
-
           <div class="full">
-            <label for="guardian">Guardian / Parent(s) Name(s)</label>
+            <label for="guardian">Guardian / Parent(s) Name(s) *</label>
             <input id="guardian" name="guardian" type="text" required>
+            <span class="error-msg" id="err-guardian">Please enter a guardian name.</span>
           </div>
-
           <div class="full">
             <label for="address">Home Address</label>
             <input id="address" name="address" type="text">
           </div>
-
           <div>
             <label for="province">Province</label>
             <input id="province" name="province" type="text">
           </div>
-
           <div>
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="text" placeholder="+27 67 265 6319" required>
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="+27 67 265 6319" required>
+            <span class="error-msg" id="err-phone">Please enter a phone number.</span>
           </div>
-
           <div>
-            <label for="email">Email Address</label>
+            <label for="email">Email Address *</label>
             <input id="email" name="email" type="email" required>
+            <span class="error-msg" id="err-email">Please enter a valid email address.</span>
           </div>
-
           <div>
             <label>Child's Allergies?</label>
             <div class="checkbox-row">
@@ -405,80 +249,114 @@
               <label><input type="radio" name="allergies" value="No" checked> No</label>
             </div>
           </div>
-
           <div class="full">
             <label for="allergyDetails">If yes, please list allergies</label>
-            <input id="allergyDetails" name="allergyDetails" type="text" placeholder="Allergies details (if any)">
+            <input id="allergyDetails" name="allergyDetails" type="text" placeholder="Allergy details (if any)">
           </div>
-
           <div class="full">
             <label for="school">What school does your child attend?</label>
             <input id="school" name="school" type="text">
           </div>
-
           <div class="full">
             <label for="interests">What are your child's interests?</label>
             <input id="interests" name="interests" type="text">
           </div>
-
           <div class="full">
-            <label for="why">Why are you interested in enrolling in Lithako Edu & Sports Programs?</label>
+            <label for="why">Why are you interested in enrolling in Lithako Edu &amp; Sports Programs?</label>
             <textarea id="why" name="why"></textarea>
           </div>
-
           <div>
             <label for="heard">How did you hear about us?</label>
             <input id="heard" name="heard" type="text">
           </div>
-
           <div>
-            <label for="signature">Parent / Guardian Name (signature)</label>
-            <input id="signature" name="signature" type="text" placeholder="Type full name">
+            <label for="signature">Parent / Guardian Name (as signature) *</label>
+            <input id="signature" name="signature" type="text" placeholder="Type full name" required>
+            <span class="error-msg" id="err-signature">Please provide your name as signature.</span>
           </div>
         </div>
-
         <div class="reg-actions">
           <button type="submit">📩 Send Registration</button>
-          <button type="button" class="secondary" onclick="resetRegistration()" aria-label="Reset form">Reset Form</button>
-          <small style="display:block; width:100%; text-align:center; margin-top:0.5rem;">Clicking "Send Registration" will open your default email app with the completed registration ready to send to <strong>lithakoedu@gmail.com</strong>.</small>
+          <button type="button" class="secondary" onclick="resetRegistration()">Reset Form</button>
+          <small class="reg-hint">Clicking "Send Registration" will open your email app with the completed registration ready to send to <strong>lithakoedu@gmail.com</strong>.</small>
         </div>
       </form>
     </div>
   </details>
 
+  <div class="privacy-note">
+    🔒 Your information is only used to process your registration and will never be shared with third parties. <a href="mailto:lithakoedu@gmail.com">Contact us</a> to request removal at any time.
+  </div>
+
   <section class="contact-section">
     <h2><i class="fas fa-headset"></i> Contact Us</h2>
-    <p class="contact-intro">We’re here to assist parents, learners, and partners — reach out anytime.</p>
+    <p class="contact-intro">We're here to assist parents, learners, and partners — reach out anytime.</p>
     <ul class="contact-list">
-      <li><i class="fas fa-envelope icon-red"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
-      <li><i class="fab fa-whatsapp icon-green"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
-      <li><i class="fas fa-map-marker-alt icon-blue"></i> City of Matlosana, South Africa</li>
+      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank" rel="noopener">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> City of Matlosana, South Africa</li>
     </ul>
   </section>
 
   <section class="sponsors">
     <h2>Our Proud Sponsors</h2>
     <div class="sponsor-logos">
-      <img src="sponsor1.jpg" alt="Sponsor 1">
-      <img src="sponsor2.jpg" alt="Sponsor 2">
-      <img src="sponsor3.jpg" alt="Sponsor 3">
-      <img src="sponsor5.jpg" alt="Sponsor 5">
-      <img src="sponsor6.jpg" alt="Sponsor 6">
-      <img src="sponsor7.jpg" alt="Sponsor 7">
+      <div class="sponsor-slot"><img src="sponsor1.jpeg" alt="Sponsor 1" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor2.jpeg" alt="Sponsor 2" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor3.jpeg" alt="Sponsor 3" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor4.jpeg" alt="Sponsor 4" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor5.jpeg" alt="Sponsor 5" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor6.jpeg" alt="Sponsor 6" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor7.jpeg" alt="Sponsor 7" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor8.jpeg" alt="Sponsor 8" onerror="this.parentElement.innerHTML='Sponsor'"></div>
+      <div class="sponsor-slot"><img src="sponsor9.jpeg" alt="Sponsor 9" onerror="this.parentElement.innerHTML='Sponsor'"></div>
     </div>
   </section>
 
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send an email" aria-label="Send an email">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+  </a>
+
   <footer>
-    &copy; 2026 Lithako Edu. All rights reserved.
+    <p>&copy; 2026 Lithako Edu &amp; Sports. All rights reserved.</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="books.html">Books</a> |
+      <a href="tutoring.html">Tutoring</a> |
+      <a href="sports.html">Sports</a> |
+      <a href="gallery.html">Gallery</a>
+    </p>
   </footer>
 
   <script>
-    // Build mailto body and open user's email client with pre-filled message.
+    const required = ['childName','childAge','guardian','phone','email','signature'];
+
+    function validateForm() {
+      let valid = true;
+      required.forEach(id => {
+        const el = document.getElementById(id);
+        const err = document.getElementById('err-' + id);
+        const empty = !el.value.trim();
+        const badEmail = id === 'email' && el.value && !/\S+@\S+\.\S+/.test(el.value);
+        if (empty || badEmail) {
+          el.classList.add('error');
+          if (err) err.classList.add('visible');
+          valid = false;
+        } else {
+          el.classList.remove('error');
+          if (err) err.classList.remove('visible');
+        }
+      });
+      return valid;
+    }
+
     function handleRegistrationSubmit(e) {
       e.preventDefault();
-      const form = document.getElementById('registrationForm');
-      const data = new FormData(form);
-
+      if (!validateForm()) return;
+      const data = new FormData(document.getElementById('registrationForm'));
       const fields = {
         "Child's Name": data.get('childName') || '',
         "Child's Age": data.get('childAge') || '',
@@ -493,29 +371,24 @@
         "Child's Interests": data.get('interests') || '',
         "Why enrolling": data.get('why') || '',
         "How did you hear about us": data.get('heard') || '',
-        "Parent/Guardian (signature/name)": data.get('signature') || ''
+        "Parent/Guardian (signature)": data.get('signature') || ''
       };
-
       let body = '';
-      for (const [k, v] of Object.entries(fields)) {
-        body += `${k}: ${v}\n`;
-      }
-
+      for (const [k, v] of Object.entries(fields)) body += `${k}: ${v}\n`;
       const subject = `Program Registration: ${fields["Child's Name"] || 'New Registration'}`;
-      const mailto = `mailto:lithakoedu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      window.location.href = mailto;
+      window.location.href = `mailto:lithakoedu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
     function resetRegistration() {
-      const form = document.getElementById('registrationForm');
-      form.reset();
-      const radios = document.getElementsByName('allergies');
-      if (radios && radios.length) {
-        for (const r of radios) { if (r.value === 'No') r.checked = true; }
+      document.getElementById('registrationForm').reset();
+      required.forEach(id => {
+        document.getElementById(id)?.classList.remove('error');
+        document.getElementById('err-' + id)?.classList.remove('visible');
+      });
+      for (const r of document.getElementsByName('allergies')) {
+        if (r.value === 'No') r.checked = true;
       }
     }
   </script>
-
 </body>
 </html>

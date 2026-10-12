@@ -1,0 +1,196 @@
+/* =============================
+   Lithako Edu & Sports
+   Shared Design System
+   ============================= */
+
+:root {
+  --primary: #005fa3;
+  --primary-dark: #00487d;
+  --accent: #0077cc;
+  --bg-soft: #f1f8ff;
+  --bg-card: #ffffff;
+  --text-main: #000000;
+  --text-muted: #444444;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-soft);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background: #000;
+  color: #add8e6;
+  text-align: center;
+  padding: 1.8rem 1rem;
+}
+
+header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.6rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+
+nav a:hover {
+  color: #aee0ff;
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  border-bottom: 3px solid #aee0ff;
+  padding-bottom: 0.2rem;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+section.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #f7faff, #fff8e1);
+}
+
+section h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  margin-top: 0;
+}
+
+/* ===== Buttons ===== */
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* ===== Lists & Links ===== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: var(--primary);
+}
+
+/* ===== Floating Buttons ===== */
+.floating-btn {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.floating-btn:hover {
+  transform: scale(1.07);
+}
+
+.floating-btn.whatsapp {
+  background: #25D366;
+  bottom: 20px;
+  right: 20px;
+}
+
+.floating-btn.email {
+  background: var(--accent);
+  bottom: 90px;
+  right: 20px;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  section {
+    margin: 1rem;
+    padding: 1.2rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+}

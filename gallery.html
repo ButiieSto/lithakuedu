@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lithako Edu & Sports | Gallery</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Photos of Lithako Edu & Sports programs, training sessions, and events in the City of Matlosana.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; background: #f1f8ff; color: #000; line-height: 1.6; }
+
+    header { width: 100%; background: #000; color: #add8e6; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; margin: 0; line-height: 1.1; letter-spacing: 2px; }
+    header img { width: 140px; height: auto; border-radius: 8px; }
+
+    nav { background: #005fa3; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem 2.5rem; padding: 0.85rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 4px; transition: color 0.3s, background 0.3s, transform 0.2s; }
+    nav a:hover { color: #aee0ff; background: rgba(255,255,255,0.1); transform: scale(1.04); }
+
+    .page-title { text-align: center; padding: 2.5rem 1rem 1rem; animation: fadeUp 0.6s ease both; }
+    .page-title h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; margin: 0; color: #005fa3; letter-spacing: 2px; }
+    .page-title p { color: #444; font-size: 1rem; margin: 0.5rem 0 0; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+
+    /* Filter tabs */
+    .filter-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; padding: 1rem; }
+    .filter-btn { background: #fff; color: #005fa3; border: 2px solid #0077cc; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.2s; }
+    .filter-btn:hover, .filter-btn.active { background: #005fa3; color: #fff; transform: scale(1.04); }
+
+    /* Gallery grid */
+    .gallery-section { max-width: 1100px; margin: 0 auto 3rem; padding: 0 1rem; }
+    .gallery-grid { columns: 3; column-gap: 1rem; }
+    .gallery-item { break-inside: avoid; margin-bottom: 1rem; border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; }
+    .gallery-item img { width: 100%; display: block; border-radius: 10px; transition: transform 0.35s ease, filter 0.3s ease; }
+    .gallery-item:hover img { transform: scale(1.04); filter: brightness(0.8); }
+    .gallery-overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 0.75rem 1rem; opacity: 0; transition: opacity 0.3s; background: linear-gradient(transparent 40%, rgba(0,0,0,0.65)); border-radius: 10px; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span { color: #fff; font-weight: 600; font-size: 0.9rem; }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; padding: 1rem; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .lightbox-close { position: absolute; top: 1rem; right: 1.5rem; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; line-height: 1; transition: transform 0.2s; }
+    .lightbox-close:hover { transform: scale(1.2); }
+    .lightbox-caption { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: #fff; font-size: 0.95rem; background: rgba(0,0,0,0.5); padding: 0.4rem 1rem; border-radius: 20px; white-space: nowrap; }
+    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 1.8rem; padding: 0.5rem 0.75rem; cursor: pointer; border-radius: 6px; transition: background 0.2s; }
+    .lb-nav:hover { background: rgba(255,255,255,0.3); }
+    .lb-prev { left: 1rem; }
+    .lb-next { right: 1rem; }
+
+    .back-home { text-align: center; margin: 2rem 0; }
+    .back-cta { background: #005fa3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+    .back-cta:hover { background: #00487d; transform: scale(1.05); }
+
+    .floating-btn { position: fixed; width: 55px; height: 55px; border-radius: 50%; font-size: 24px; color: white; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: transform 0.25s, filter 0.25s; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+    .floating-btn:hover { transform: scale(1.1); filter: brightness(1.1); }
+    .whatsapp-float { background: #25D366; bottom: 20px; right: 20px; }
+    .email-float    { background: #0077cc; bottom: 90px; right: 20px; }
+
+    footer { background: #000; color: #ccc; text-align: center; padding: 1rem; font-size: 0.9rem; }
+
+    @media (max-width: 700px) {
+      header { flex-direction: column; text-align: center; padding: 1.25rem 1rem; }
+      header img { margin-top: 1rem; }
+      header h1 { font-size: 2.2rem; }
+      .gallery-grid { columns: 2; }
+    }
+    @media (max-width: 450px) { .gallery-grid { columns: 1; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LITHAKO<br>EDU &amp; SPORTS</h1>
+    <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Logo">
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="sports.html"><i class="fas fa-running"></i> Sports</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+  </nav>
+
+  <div class="page-title">
+    <h2><i class="fas fa-images"></i> Gallery</h2>
+    <p>Moments from our programs, training sessions, and events.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+    <button class="filter-btn" onclick="filterGallery('football', this)">Football</button>
+    <button class="filter-btn" onclick="filterGallery('basketball', this)">Basketball</button>
+    <button class="filter-btn" onclick="filterGallery('athletics', this)">Athletics</button>
+    <button class="filter-btn" onclick="filterGallery('tutoring', this)">Tutoring</button>
+  </div>
+
+  <section class="gallery-section">
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Items injected by JS -->
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightboxBtn()">&times;</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1, event)"><i class="fas fa-chevron-left"></i></button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" onclick="lbNav(1, event)"><i class="fas fa-chevron-right"></i></button>
+    <span class="lightbox-caption" id="lbCaption"></span>
+  </div>
+
+  <div class="back-home">
+    <a class="back-cta" href="index.html"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
+
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" aria-label="Send an email"><i class="fas fa-envelope"></i></a>
+
+  <footer>&copy; 2026 Lithako Edu &amp; Sports. All rights reserved.</footer>
+
+  <script>
+    const photos = [
+      { src: 'https://images.unsplash.com/photo-1745012010615-47abbeb3e906?w=700&q=75', label: 'Football Training', cat: 'football' },
+      { src: 'https://images.unsplash.com/photo-1559838831-d8fbd8af6469?w=700&q=75', label: 'Basketball Session', cat: 'basketball' },
+      { src: 'https://images.unsplash.com/photo-1763639700458-38a0fd25335d?w=700&q=75', label: 'Athletics Practice', cat: 'athletics' },
+      { src: 'https://images.unsplash.com/photo-1761604478724-13fe879468cf?w=700&q=75', label: 'Tutoring Session', cat: 'tutoring' },
+      { src: 'https://images.unsplash.com/photo-1763561950978-2675d755f80a?w=700&q=75', label: 'Sprint Training', cat: 'athletics' },
+      { src: 'https://images.unsplash.com/photo-1655720362142-e1be7205382c?w=700&q=75', label: 'Fitness Training', cat: 'athletics' },
+      { src: 'https://images.unsplash.com/photo-1660501602631-6b2b3f7c9b40?w=700&q=75', label: 'Team Football', cat: 'football' },
+      { src: 'https://images.unsplash.com/photo-1610460510776-5040e925f7c5?w=700&q=75', label: 'Basketball Drills', cat: 'basketball' },
+      { src: 'https://images.unsplash.com/photo-1567057420215-0afa9aa9253a?w=700&q=75', label: 'Classroom Learning', cat: 'tutoring' },
+      { src: 'https://images.unsplash.com/photo-1664990594674-418f27010fee?w=700&q=75', label: 'Kids Running', cat: 'athletics' },
+      { src: 'https://images.unsplash.com/photo-1701872324039-6aceb083d8ca?w=700&q=75', label: 'Football Skills', cat: 'football' },
+      { src: 'https://images.unsplash.com/photo-1637148659333-aa7f09fc2d13?w=700&q=75', label: 'Study Group', cat: 'tutoring' },
+    ];
+
+    let currentIdx = 0;
+    let visiblePhotos = [...photos];
+
+    function buildGrid(filter) {
+      const grid = document.getElementById('galleryGrid');
+      visiblePhotos = filter === 'all' ? photos : photos.filter(p => p.cat === filter);
+      grid.innerHTML = '';
+      visiblePhotos.forEach((p, i) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.innerHTML = `<img src="${p.src}" alt="${p.label}" loading="lazy"><div class="gallery-overlay"><span>${p.label}</span></div>`;
+        item.addEventListener('click', () => openLightbox(i));
+        grid.appendChild(item);
+      });
+    }
+
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      buildGrid(cat);
+    }
+
+    function openLightbox(idx) {
+      currentIdx = idx;
+      document.getElementById('lbImg').src = visiblePhotos[idx].src;
+      document.getElementById('lbCaption').textContent = visiblePhotos[idx].label;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) { if (e.target === document.getElementById('lightbox')) closeLightboxBtn(); }
+    function closeLightboxBtn() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+
+    function lbNav(dir, e) {
+      e.stopPropagation();
+      currentIdx = (currentIdx + dir + visiblePhotos.length) % visiblePhotos.length;
+      document.getElementById('lbImg').src = visiblePhotos[currentIdx].src;
+      document.getElementById('lbCaption').textContent = visiblePhotos[currentIdx].label;
+    }
+
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowRight') lbNav(1, { stopPropagation: () => {} });
+      if (e.key === 'ArrowLeft')  lbNav(-1, { stopPropagation: () => {} });
+      if (e.key === 'Escape')     closeLightboxBtn();
+    });
+
+    buildGrid('all');
+  </script>
+</body>
+</html>

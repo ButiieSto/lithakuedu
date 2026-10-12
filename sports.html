@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lithako Edu & Sports | Sports Programs – City of Matlosana</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Football, Basketball, Netball, Athletics and more for learners aged 5–15. Join Lithako Edu & Sports in the City of Matlosana.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; background: #f1f8ff; color: #000; line-height: 1.6; }
+
+    header { width: 100%; background: #000; color: #add8e6; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; margin: 0; line-height: 1.1; letter-spacing: 2px; }
+    header img { width: 140px; height: auto; border-radius: 8px; }
+
+    nav { background: #005fa3; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem 2.5rem; padding: 0.85rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 4px; transition: color 0.3s, background 0.3s, transform 0.2s; }
+    nav a:hover { color: #aee0ff; background: rgba(255,255,255,0.1); transform: scale(1.04); }
+
+    .hero-banner { position: relative; height: 380px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
+    .hero-text { position: relative; z-index: 1; color: #fff; padding: 1rem; animation: fadeUp 0.7s ease both; }
+    .hero-text h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; margin: 0 0 0.5rem; letter-spacing: 2px; color: #add8e6; }
+    .hero-text p { font-size: 1.15rem; max-width: 580px; margin: 0 auto 1.5rem; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+    .card { max-width: 900px; margin: 2rem auto; background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; box-shadow: 0 4px 14px rgba(0,0,0,0.07); padding: 1.5rem; }
+    .card h2 { color: #005fa3; margin-top: 0; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.8rem; text-align: center; }
+
+    .sport-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .sport-card { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); transition: transform 0.25s, box-shadow 0.25s; background: #fff; }
+    .sport-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,95,163,0.18); }
+    .sport-card img { width: 100%; height: 170px; object-fit: cover; }
+    .sport-info { padding: 1rem; }
+    .sport-info h3 { margin: 0 0 0.4rem; color: #005fa3; display: flex; align-items: center; gap: 0.5rem; }
+    .sport-info p { margin: 0; font-size: 0.9rem; color: #333; }
+    .sport-badge { display: inline-block; background: #e8f4ff; color: #005fa3; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; margin-top: 0.5rem; }
+
+    .info-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .info-tile { background: #f1f8ff; border-radius: 8px; padding: 1rem 1.25rem; border: 2px solid #cde9ff; text-align: center; }
+    .info-tile i { font-size: 1.6rem; color: #005fa3; margin-bottom: 0.4rem; }
+    .info-tile h4 { margin: 0.25rem 0; color: #003d6b; font-size: 1rem; }
+    .info-tile p { margin: 0; font-size: 0.9rem; color: #333; }
+
+    .btn-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
+    .btn { background: #005fa3; color: #fff; border: none; padding: 0.75rem 1.8rem; font-size: 1rem; font-family: 'Poppins', sans-serif; font-weight: 600; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+    .btn:hover { background: #00487d; transform: scale(1.05); }
+    .btn.whatsapp { background: #25D366; }
+    .btn.whatsapp:hover { background: #1da851; }
+
+    .schedule-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
+    .schedule-table th { background: #005fa3; color: #fff; padding: 0.7rem 1rem; text-align: left; }
+    .schedule-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #e0eeff; }
+    .schedule-table tr:nth-child(even) td { background: #f7fbff; }
+    .schedule-table tr:hover td { background: #eaf5ff; }
+
+    .contact-section { max-width: 800px; margin: 3rem auto; background: #fff; border-left: 4px solid #0077cc; border-radius: 0 8px 8px 0; padding: 1.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .contact-section h2 { font-size: 1.8rem; margin: 0 0 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: #005fa3; }
+    .contact-list { list-style: none; padding: 0; margin: 0; }
+    .contact-list li { margin: 0.6rem 0; font-size: 1rem; }
+    .contact-list a { color: #005fa3; text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    .floating-btn { position: fixed; width: 55px; height: 55px; border-radius: 50%; font-size: 24px; color: white; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: transform 0.25s, filter 0.25s; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+    .floating-btn:hover { transform: scale(1.1); filter: brightness(1.1); }
+    .whatsapp-float { background: #25D366; bottom: 20px; right: 20px; }
+    .email-float    { background: #0077cc; bottom: 90px; right: 20px; }
+
+    .back-home { text-align: center; margin: 2rem 0; }
+    .back-cta { background: #005fa3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s, transform 0.2s; text-decoration: none; }
+    .back-cta:hover { background: #00487d; transform: scale(1.05); }
+
+    footer { background: #000; color: #ccc; text-align: center; padding: 1rem; font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; text-align: center; padding: 1.25rem 1rem; }
+      header img { margin-top: 1rem; }
+      header h1 { font-size: 2.2rem; }
+      .hero-banner { height: 280px; }
+      .hero-text h2 { font-size: 2.2rem; }
+      .card { margin: 1.5rem 0.75rem; }
+      .schedule-table { font-size: 0.82rem; }
+      .schedule-table th, .schedule-table td { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LITHAKO<br>EDU &amp; SPORTS</h1>
+    <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Logo">
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="sports.html"><i class="fas fa-running"></i> Sports</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+  </nav>
+
+  <div class="hero-banner">
+    <img src="https://images.unsplash.com/photo-1701872324039-6aceb083d8ca?w=1400&q=80" alt="Sports training">
+    <div class="hero-text">
+      <h2>Sports Programs</h2>
+      <p>High-energy, coach-led programs designed to build champions on and off the field — for ages 5 to 15.</p>
+      <a href="index.html#register" style="background:#005fa3;color:#fff;padding:0.75rem 1.5rem;border-radius:6px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;"><i class="fas fa-clipboard-list"></i> Register Now</a>
+    </div>
+  </div>
+
+  <!-- Program Info -->
+  <section class="card">
+    <h2><i class="fas fa-info-circle"></i> Program Details</h2>
+    <div class="info-row">
+      <div class="info-tile"><i class="fas fa-child"></i><h4>Ages</h4><p>5 to 15 years</p></div>
+      <div class="info-tile"><i class="fas fa-map-marker-alt"></i><h4>Location</h4><p>City of Matlosana, North West</p></div>
+      <div class="info-tile"><i class="fas fa-laptop"></i><h4>Format</h4><p>Onsite training sessions</p></div>
+      <div class="info-tile"><i class="fas fa-shield-alt"></i><h4>Coaches</h4><p>Qualified &amp; dedicated</p></div>
+    </div>
+  </section>
+
+  <!-- Sports Cards -->
+  <section class="card">
+    <h2><i class="fas fa-trophy"></i> Our Sports</h2>
+    <div class="sport-grid">
+      <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1745012010615-47abbeb3e906?w=500&q=70" alt="Football training" loading="lazy">
+        <div class="sport-info">
+          <h3><i class="fas fa-futbol"></i> Football</h3>
+          <p>Skills, teamwork, and tactics. From basic ball control to competitive play.</p>
+          <span class="sport-badge">Ages 5–15</span>
+        </div>
+      </div>
+      <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1559838831-d8fbd8af6469?w=500&q=70" alt="Basketball training" loading="lazy">
+        <div class="sport-info">
+          <h3><i class="fas fa-basketball-ball"></i> Basketball</h3>
+          <p>Dribbling, shooting, and game intelligence. Fun and fast-paced development.</p>
+          <span class="sport-badge">Ages 7–15</span>
+        </div>
+      </div>
+      <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1729963421538-31c333335b3c?w=500&q=70" alt="Netball" loading="lazy">
+        <div class="sport-info">
+          <h3><i class="fas fa-volleyball-ball"></i> Netball</h3>
+          <p>Coordination, positioning, and teamwork in a structured and supportive environment.</p>
+          <span class="sport-badge">Ages 7–15</span>
+        </div>
+      </div>
+      <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1763561950978-2675d755f80a?w=500&q=70" alt="Athletics" loading="lazy">
+        <div class="sport-info">
+          <h3><i class="fas fa-running"></i> Athletics</h3>
+          <p>Sprints, distance running, and field events. Building speed, endurance &amp; discipline.</p>
+          <span class="sport-badge">Ages 5–15</span>
+        </div>
+      </div>
+      <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1655720362142-e1be7205382c?w=500&q=70" alt="Fitness" loading="lazy">
+        <div class="sport-info">
+          <h3><i class="fas fa-dumbbell"></i> General Fitness</h3>
+          <p>Strength, agility, and conditioning sessions for well-rounded young athletes.</p>
+          <span class="sport-badge">Ages 10–15</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section class="card">
+    <h2><i class="fas fa-calendar-alt"></i> Sample Weekly Schedule</h2>
+    <p style="text-align:center;color:#555;font-size:0.9rem;">Contact us to confirm current session times for your child's age group.</p>
+    <table class="schedule-table">
+      <thead>
+        <tr><th>Day</th><th>Sport</th><th>Age Group</th><th>Time</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monday</td><td><i class="fas fa-futbol" style="color:#005fa3;"></i> Football</td><td>Ages 5–10</td><td>15:00 – 17:00</td></tr>
+        <tr><td>Tuesday</td><td><i class="fas fa-basketball-ball" style="color:#f5a623;"></i> Basketball</td><td>Ages 7–15</td><td>15:00 – 17:00</td></tr>
+        <tr><td>Wednesday</td><td><i class="fas fa-volleyball-ball" style="color:#25D366;"></i> Netball</td><td>Ages 7–15</td><td>15:00 – 17:00</td></tr>
+        <tr><td>Thursday</td><td><i class="fas fa-futbol" style="color:#005fa3;"></i> Football</td><td>Ages 11–15</td><td>15:00 – 17:00</td></tr>
+        <tr><td>Friday</td><td><i class="fas fa-running" style="color:#d93025;"></i> Athletics</td><td>Ages 5–15</td><td>14:00 – 16:00</td></tr>
+        <tr><td>Saturday</td><td><i class="fas fa-dumbbell" style="color:#555;"></i> General Fitness</td><td>Ages 10–15</td><td>09:00 – 11:00</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CTA -->
+  <div class="btn-row">
+    <a class="btn" href="index.html#register"><i class="fas fa-clipboard-list"></i> Register Now</a>
+    <a class="btn whatsapp" href="https://wa.me/27672656319" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+
+  <section class="contact-section">
+    <h2><i class="fas fa-headset"></i> Contact Us</h2>
+    <ul class="contact-list">
+      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank" rel="noopener">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> City of Matlosana, South Africa</li>
+    </ul>
+  </section>
+
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" aria-label="Send an email"><i class="fas fa-envelope"></i></a>
+
+  <div class="back-home">
+    <a class="back-cta" href="index.html"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
+
+  <footer>&copy; 2026 Lithako Edu &amp; Sports. All rights reserved.</footer>
+</body>
+</html>

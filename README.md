@@ -1,1 +1,1 @@
-# lithakoedu
+# lesupi-demo
